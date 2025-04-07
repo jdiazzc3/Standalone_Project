@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favoritos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ng-container *ngIf="(favoritos$ | async) as favoritos">
+    <ng-container *ngIf="favoritos.length > 0; else noFavoritos">
+      <app-character-list 
+        [personajes]="favoritos" 
+        titulo="Favoritos" 
+        subtitulo="Lista de Favoritos">
+      </app-character-list>
+    </ng-container>
+  </ng-container>
+  
+  <ng-template #noFavoritos>
+    <div class="no-favoritos">
+      <p>No hay personajes favoritos</p>
+    </div>
+  </ng-template>  
+</ion-content>

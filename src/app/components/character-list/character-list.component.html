@@ -1,0 +1,14 @@
+<ion-list>
+  <ion-label>{{ titulo }} - {{ subtitulo }}</ion-label>
+  <ion-item *ngFor="let personaje of personajes">
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="{{ personaje.image }}" />
+    </ion-avatar>
+    <ion-label>
+      {{ personaje.name }} - {{ personaje.species }} -- {{ personaje.status }}
+    </ion-label>
+    <ion-icon [name]="isFavorite(personaje) ? 'heart' : 'heart-outline'" slot="end" (click)="toggleFavorite(personaje)"
+      [class.favorite]="isFavorite(personaje)">
+    </ion-icon>
+  </ion-item>
+</ion-list>

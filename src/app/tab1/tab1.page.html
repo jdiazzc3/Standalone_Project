@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cámara</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="full" (click)="takePicture()">Abrir Cámara</ion-button>
+
+  <div *ngIf="image">
+    <img [src]="image" alt="Foto tomada" />
+  </div>
+</ion-content>
