@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import {IonAvatar, IonItem, IonLabel} from '@ionic/angular/standalone';
+import {IonAvatar, IonItem, IonLabel, IonList, IonIcon} from '@ionic/angular/standalone';
 import { Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { addFavorite, removeFavorite } from 'src/app/store/favorites/favorites.actions';
 import { selectAllFavorites } from 'src/app/store/favorites/favorites.selectors';
+
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
@@ -14,10 +14,11 @@ import { selectAllFavorites } from 'src/app/store/favorites/favorites.selectors'
   standalone: true,
   imports: [
     CommonModule,
-    IonicModule,
     IonAvatar,
     IonItem,
-    IonLabel
+    IonLabel,
+    IonList,
+    IonIcon
   ]
 })
 export class CharacterListComponent  implements OnInit {

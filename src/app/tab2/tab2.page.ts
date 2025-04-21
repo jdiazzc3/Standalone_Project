@@ -17,7 +17,7 @@ import { ApiServiceService } from '../services/api-service.service';
     IonInfiniteScroll,   
     IonInfiniteScrollContent,
     CommonModule,
-    CharacterListComponent
+    CharacterListComponent,
   ]
 })
 export class Tab2Page implements OnInit {
