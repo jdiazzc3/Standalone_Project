@@ -75,4 +75,82 @@ export class ApiServiceService {
     );
   }
 
+  getHeroes(): Observable<any> {
+    const url = environment.URL_HEROES;
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // GET a single hero by ID
+  getHero(id: string): Observable<any> {
+    const url = `${environment.URL_HEROES}/${id}`;
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // POST to create a new hero
+  createHero(hero: any): Observable<any> {
+    const url = environment.URL_HEROES;
+    return this.http.post(url, hero).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // PUT to update a hero
+  updateHero(id: string, heroData: any): Observable<any> {
+    const url = `${environment.URL_HEROES}/${id}`;
+    return this.http.put(url, heroData).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // DELETE a hero
+  deleteHero(id: string): Observable<any> {
+    const url = `${environment.URL_HEROES}/${id}`;
+    return this.http.delete(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // GET a single image by ID
+  getImagesByHeroId(heroId: string): Observable<any> {
+    const url = `${environment.URL_MULTIMEDIA}/hero/${heroId}`;
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+
+  // GET all hero images (collection of all images)
+  getHeroImages(): Observable<any> {
+    const url = environment.URL_MULTIMEDIA;
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
+  
+  // DELETE an image
+  deleteHeroImage(id: string): Observable<any> {
+    const url = `${environment.URL_MULTIMEDIA}/${id}`;
+    return this.http.delete(url).pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
 }

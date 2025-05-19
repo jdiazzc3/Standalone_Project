@@ -1,0 +1,46 @@
+<ion-card>
+  <!-- Image with fallback -->
+  <ion-img 
+    [src]="imageData.imageUrl" 
+    alt="Hero image"
+    (error)="onImageError($event)"
+  ></ion-img>
+  
+  <!-- Fallback icon (hidden by default) -->
+  <div class="profile-icon-fallback" *ngIf="showFallbackIcon">
+    <ion-icon name="person-circle" color="medium"></ion-icon>
+  </div>
+  
+  <ion-card-header>
+    <ion-card-title>{{ heroName }}</ion-card-title>
+  </ion-card-header>
+  
+  <ion-card-content>
+    <p *ngIf="heroDetails?.bio">{{ heroDetails.bio }}</p>
+    <p *ngIf="imageData?.descripcion">{{ imageData.descripcion }}</p>
+    
+    <div *ngIf="heroDetails" class="hero-details">
+      <ion-chip>
+        <ion-icon name="business"></ion-icon>
+        <ion-label>{{ heroDetails.casa }}</ion-label>
+      </ion-chip>
+      
+      <ion-chip *ngIf="heroDetails.aparicion">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>{{ formatDate(heroDetails.aparicion) }}</ion-label>
+      </ion-chip>
+    </div>
+    
+    <div class="action-buttons">
+      <ion-button fill="clear" color="primary" (click)="viewHeroDetails()">
+        <ion-icon name="eye" slot="start"></ion-icon>
+        View Hero
+      </ion-button>
+      
+      <ion-button fill="clear" color="danger" (click)="deleteImage()">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Delete
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

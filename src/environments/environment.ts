@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  URL_RM: 'https://rickandmortyapi.com/api'
+  URL_RM: 'https://rickandmortyapi.com/api',
+  URL_HEROES: 'https://backheroes.onrender.com/api/heroes',
+  URL_MULTIMEDIA: 'https://backheroes.onrender.com/api/multimedia',
 };
 
 /*
